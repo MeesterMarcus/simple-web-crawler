@@ -17,10 +17,16 @@ public class WebCrawler {
         this.url = url;
     }
 
-    public void crawlWebsite() throws IOException {
-        Document doc = Jsoup.connect(url).get();
-        printLinks(doc);
-        printImages(doc);
+    public void crawlWebsite() {
+        try {
+            Document doc = Jsoup.connect(url).get();
+            printLinks(doc);
+            printImages(doc);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Incorrect url was passed: " + url);
+        } catch (IOException e) {
+            System.err.println("There was an error getting url: " + url);
+        }
     }
 
     /**

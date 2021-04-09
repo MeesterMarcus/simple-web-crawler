@@ -7,20 +7,13 @@ import java.io.IOException;
  * immediate domain. I will be using the Jsoup to leverage it's HTML parsing capabilities.
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         // ensure that url argument was passed
         if (args.length == 1) {
             String url = args[0];
             System.out.println("Crawling "+ url +"...");
             WebCrawler webCrawler = new WebCrawler(url);
-            try {
-                webCrawler.crawlWebsite();
-            } catch (IllegalArgumentException e) {
-                System.err.println("Incorrect url was passed: " + url);
-            } catch (IOException e) {
-                System.err.println("There was an error getting url: " + url);
-            }
-
+            webCrawler.crawlWebsite();
         } else {
             System.err.println("Please pass a URL as command line argument (including http(s)://)");
         }
