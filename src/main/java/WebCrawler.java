@@ -32,6 +32,7 @@ public class WebCrawler {
     /**
      * Loop through the elements that contain a src tag, further filter by looking for img type and print out
      * the url and alt tag.
+     *
      * @param doc : the document retrieved from Jsoup
      */
     private void printImages(Document doc) {
@@ -41,7 +42,7 @@ public class WebCrawler {
             String altTag = src.attr("alt");
             String type = src.normalName();
             if (type.equals("img")) {
-                System.out.println("<url>" + src.attr("abs:src") +"</url> " + "(" + altTag + ")");
+                System.out.println("<url>" + src.attr("abs:src") + "</url> " + "(" + altTag + ")");
             }
         }
     }
@@ -49,6 +50,7 @@ public class WebCrawler {
     /**
      * Loop through the elements that contain a a[href] tag in order to print out the links contained in the anchors and
      * the anchor text.
+     *
      * @param doc : the document retrieved from Jsoup
      */
     private void printLinks(Document doc) {
