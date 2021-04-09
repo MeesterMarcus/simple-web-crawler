@@ -30,7 +30,7 @@ public class WebCrawler {
      */
     private void printImages(Document doc) {
         Elements srcElements = doc.select("[src]");
-        System.out.println("\nImages: " + srcElements.size());
+        System.out.println("\nImages:\n");
         for (Element src : srcElements) {
             String altTag = src.attr("alt");
             String type = src.normalName();
@@ -47,7 +47,7 @@ public class WebCrawler {
      */
     private void printLinks(Document doc) {
         Elements anchors = doc.select("a[href]");
-        System.out.println("\nURLs: " + anchors.size());
+        System.out.println("\nURLs\n");
         for (Element anchor : anchors) {
             String absoluteUrl = anchor.attr("abs:href");
             String anchorText = anchor.text();

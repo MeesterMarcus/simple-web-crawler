@@ -5,4 +5,7 @@ This Java program utilizes Jsoup in order to fetch and parse HTML from a website
 immediate domain to display its links and images.
 
 ### How to use
-1. Compile the Java program providing the url as a command line argument
+1. Open project in IDE of choice
+2. Compile maven with `mvn clean install`
+3. Create a run configuration and pass the url as argument (example: https://www.cnet.com
+4. Run program
